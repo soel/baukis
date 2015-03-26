@@ -1,6 +1,6 @@
 class Staff::TopController < ApplicationController
   def index
-    #raise
+    raise
     render action: 'index'
   end
 end
