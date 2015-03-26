@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore bundle files
+/vendor/bundler
+
+# Ignore public assets file
+/public/assets
