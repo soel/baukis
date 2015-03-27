@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
   class IpAddressRejected < ActionController::ActionControllerError; end
 
   rescue_from Exception, with: :rescue500
-  rescue_from Forbidden, wigh: :rescue403
-  rescue_from IpAddressRefected, with: :rescue403
+  rescue_from Forbidden, with: :rescue403
+  rescue_from IpAddressRejected, with: :rescue403
 
   private
 
