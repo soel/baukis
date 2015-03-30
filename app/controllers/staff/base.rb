@@ -3,7 +3,7 @@ class Staff::Base < ApplicationController
   def current_staff_member
     if session[:staff_member_id]
       @current_staff_member ||=
-        StaffMmember.find_by(id: session[:staff_member_id])
+        StaffMember.find_by_id(session[:staff_member_id])
     end
   end
 
