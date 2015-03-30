@@ -1,4 +1,4 @@
-StaffMember.create(
+StaffMember.create!(
   email: 'taro@example.com',
   family_name: '山田',
   given_name: '太郎',
