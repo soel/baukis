@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     namespace :staff, path: config[:staff][:path] do
       root 'top#index'
       get 'login' => 'sessions#new', as: :login
-      resource :session, only: [ :create, :destroy]
-      resource :acount, except: [ :new, :create, :destroy]
+      resource :session, only: [ :create, :destroy ]
+      resource :account, except: [ :new, :create, :destroy ]
     end
   end
 
@@ -25,6 +25,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'errors#routing_error'
-  get '*anything' => 'errors#routing_error'
+  root 'errors#not_found'
+  get '*anything' => 'errors#not_found'
 end
