@@ -15,4 +15,23 @@ describe Admin::StaffMembersController do
         to raise_error(ActionController::ParameterMissing)
     end
   end
+
+  describe '#update' do
+    let(:staff_member) { create(:staff_member) }
+
+    example 'suspended フラグをセットする' do
+      params_hash.merge!(suspended: true)
+      patch :update, id: staff_member.id, staff_member: params_hash
+      staff_member.reload
+      expect(staff_member).to be_suspended
+    end
+
+    example 'hashed_password の値の書き換え付加' do
+      params_hash.delete(:password)
+      params_hash.merge!(hashed_password: 'x')
+      expect {
+        patch :update, id: staff_member.id, staff_member: params_hash
+      }.not_to change { staff_member.hashed_password.to_s }
+    end
+  end
 end
