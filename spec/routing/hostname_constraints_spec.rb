@@ -28,14 +28,14 @@ describe 'ルーティング' do
   example 'ホスト名が対象外なら error/not_found へ' do
     expect(get: 'http://foo.example.jp').to route_to(
       controller: 'errors',
-      action: 'routing_error'
+      action: 'not_found'
     )
   end
 
   example '存在しないパスなら errors/not_found へ' do
     expect(get: 'http://baukis.example.com/xyz').to route_to(
       controller: 'errors',
-      action: 'routing_error',
+      action: 'not_found',
       anything: 'xyz'
     )
   end
