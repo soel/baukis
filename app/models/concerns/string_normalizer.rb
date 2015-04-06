@@ -3,7 +3,7 @@ require 'nkf'
 module StringNormalizer
   extend ActiveSupport::Concern
 
-  def nomalize_as_email(text)
+  def normalize_as_email(text)
     NKF.nkf('-W -w -Z1', text).strip if text
   end
 
