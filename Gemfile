@@ -27,6 +27,7 @@ gem 'foreigner', '~> 1.6.1'
 gem 'kaminari', '~> 0.15.1'
 gem 'date_validator', '~> 0.7.0'
 gem 'email_validator', '~> 1.4.0'
+gem 'jquery-ui-rails', '~> 4.2.1'
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'spring-commands-rspec', '~> 1.0.1'
