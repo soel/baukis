@@ -20,3 +20,11 @@
 
 # Ignore public assets file
 /public/assets
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
