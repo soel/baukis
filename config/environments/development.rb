@@ -39,6 +39,6 @@ Rails.application.configure do
     staff: { host: 'baukis.example.com', path: ''},
     admin: { host: 'baukis.example.com', path: 'admin'},
     customer: { host: 'example.com', path: 'mypage'},
-    restrict_ip_addresses: true
+    restrict_ip_addresses: false
   }
 end
