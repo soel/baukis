@@ -24,6 +24,6 @@ class ApplicationController < ActionController::Base
 
   def rescue403(e)
     @exception = e
-    render 'error/forbidden', status: 403
+    render 'errors/forbidden', status: 403
   end
 end
