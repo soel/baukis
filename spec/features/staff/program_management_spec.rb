@@ -21,6 +21,7 @@ feature 'プログラム管理機能', :performance do
   scenario 'プログラム一覧' do |example|
     visit staff_programs_path
     expect(page).to have_css('h1', text: 'プログラム管理')
+    puts page.body
 
     elapsed = Benchmark.realtime do
       100.times do
