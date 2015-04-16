@@ -18,6 +18,13 @@ class Admin::AllowedSourcesController < Admin::Base
     end
   end
 
+  def delete
+    if Admin::AllowedSourcesDeleter.new.delete(params[:form])
+      flash.notice = '許可IPアドレスを削除しました。'
+    end
+    redirect_to action: 'index'
+  end
+
   private
   def allowed_source_params
     params.require(:allowed_source)
