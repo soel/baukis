@@ -3,4 +3,8 @@ class Staff::ProgramsController < Staff::Base
     @programs = Program.order(application_start_time: :desc)
       .page(params[:page])
   end
+
+  def show
+    @program = Program.find(params[:id])
+  end
 end
