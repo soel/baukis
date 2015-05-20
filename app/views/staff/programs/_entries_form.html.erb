@@ -34,7 +34,19 @@ rows += 1 unless entries.size % cols == 0
           m.input attributes
         end
       end %>
-      <% end %>
+    <% end %>
   </tr>
   <% end %>
 </table>
+
+<div class="button-wrapper">
+  <%= form_for Staff::EntriesForm.new(program: @program), as: 'form',
+    url: [ :entries, :staff, @program ], html: { method: :patch } do |f| %>
+    <%= f.hidden_field :approved %>
+    <%= f.hidden_field :not_approved %>
+    <%= f.hidden_field :canceled %>
+    <%= f.hidden_field :not_canceled %>
+    <%= button_tag '申し込みのフラグを更新する', type: 'button',
+      id: 'update-entries-button' %>
+  <% end %>
+</div>
