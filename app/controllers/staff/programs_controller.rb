@@ -29,7 +29,7 @@ class Staff::ProgramsController < Staff::Base
   end
 
   def update
-    @program_form = Staff::ProgramForm.new(program.find(params[:id]))
+    @program_form = Staff::ProgramForm.new(Program.find(params[:id]))
     @program_form.assign_attributes(params[:form])
     if @program_form.save
       flash.notice = 'プログラムを更新しました。'
