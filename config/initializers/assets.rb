@@ -8,3 +8,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile +=
   %w( staff.css admin.css customer.css staff.js admin.js customer.js)
+
+Sprockets::Context.send(:include, Rails.application.routes.url_helpers)
