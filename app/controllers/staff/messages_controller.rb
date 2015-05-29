@@ -15,7 +15,7 @@ class Staff::MessagesController < Staff::Base
   #GET
   def outbound
     @messages = StaffMessage.where(deleted: false).page(params[:page])
-    reder action: 'index'
+    render action: 'index'
   end
 
   #GET
